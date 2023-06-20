@@ -11,9 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_06_14_183641) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -43,18 +40,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_183641) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "full_name"
+    t.string "first_name"
+    t.string "surname"
     t.string "email"
     t.string "phone"
     t.string "address"
     t.string "city"
     t.string "country"
-    t.string "zip_code"
+    t.string "post_code"
     t.string "profession"
     t.date "dob"
     t.boolean "approved", default: false
     t.string "job"
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.string "manual_handling_certificate"
     t.string "health_and_safety_certificate"
     t.datetime "created_at", null: false
